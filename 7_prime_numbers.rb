@@ -5,8 +5,9 @@ primes = [2, 3]
 
 class Integer < Numeric
   def is_prime?
-    return false if self <= 1
-    2.upto(Math.sqrt(self).to_i) do |x|
+    return false if self <= 1 or self.even?
+    return false unless (self - 1) % 6 == 0 or (self + 1) % 6 == 0
+    3.step(Math.sqrt(self).to_i, 2) do |x|
       return false if self % x == 0
     end
     true
