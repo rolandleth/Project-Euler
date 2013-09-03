@@ -11,10 +11,10 @@ until condition
   x4 = (number * 4).to_s.split('')
   x5 = (number * 5).to_s.split('')
   x6 = (number * 6).to_s.split('')
-  condition = true if (x1 & x2).count == x1.count and
-      (x1 & x3).count == x1.count and
-      (x1 & x4).count == x1.count and
-      (x1 & x5).count == x1.count and
-      (x1 & x6).count == x1.count
+  condition = true if x1.sort == x2.sort and
+      x1.sort == x3.sort and
+      x1.sort == x4.sort and
+      x1.sort == x5.sort and
+      x1.sort == x6.sort
 end
 puts number
